@@ -121,6 +121,7 @@ std::vector<std::wstring> Strings::VariantToStrVector(const VARIANT *pVar)
 			break;
 
 		case VT_ARRAY | VT_BSTR:
+		case VT_ARRAY | VT_VARIANT:
 			{
 				auto size = pVar->parray->rgsabound->cElements;
 

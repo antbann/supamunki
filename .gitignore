@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+/Debug
+/.vs/SupaMunki/v15
+/SharpClient/bin/Debug
+/SupaMunki/Debug
+/SharpClient/obj/Debug
+/SupaMunkiClient/Debug
