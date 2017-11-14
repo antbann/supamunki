@@ -1,0 +1,12 @@
+HKCR
+{
+	SupaMunki.Element.1 = s 'SupaMunkiElement Class'
+	{
+		CLSID = s '{2a8272b8-324c-468e-a638-4a82e61159d0}'
+	}
+	SupaMunki.Element = s 'SupaMunkiElement Class'
+	{
+		CLSID = s '{2a8272b8-324c-468e-a638-4a82e61159d0}'
+		CurVer = s 'SupaMunki.Element.1'
+	}
+}

@@ -1,0 +1,18 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {2a8272b8-324c-468e-a638-4a82e61159d0} = s 'SupaMunkiElement class'
+		{
+			ProgID = s 'SupaMunki.Element.1'
+			VersionIndependentProgID = s 'SupaMunki.Element'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			TypeLib = s '{7c9aaaa5-ed08-49cb-bfd2-738c33731292}'
+			Version = s '1.0'
+		}
+	}
+}
