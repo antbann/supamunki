@@ -12,6 +12,7 @@
 #include <fstream>
 #include "logger.h"
 #include "WinReg.h"
+#include "Strings.h"
 
 
 namespace logging = boost::log;
@@ -19,7 +20,7 @@ namespace src = boost::log::sources;
 namespace expr = boost::log::expressions;
 namespace sinks = boost::log::sinks;
 namespace attrs = boost::log::attributes;
-namespace fs = boost::filesystem;
+
 
 using namespace winreg;
 
@@ -53,11 +54,7 @@ std::wstring GetLogFile()
 	RegKey key{ HKEY_CLASSES_ROOT, DEBUG_SUBKEY };
 	std::wstring result(key.GetStringValue(DEBUG_TRACEDIR));
 
-	fs::path dir(result);
-	fs::path file(LOGFILE);
-	fs::path path = dir / file;
-
-	return path.c_str();
+	return Strings::JoinPaths(result, LOGFILE);
 }
 
 LONG GetThreshold()

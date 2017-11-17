@@ -9,7 +9,7 @@
 #include <windows.h>
 
 // the logs are also written to LOGFILE
-#define LOGFILE "SupaMunki.log"
+#define LOGFILE L"SupaMunki.log"
 #define DEBUG_SUBKEY L"TypeLib\\{7C9AAAA5-ED08-49CB-BFD2-738C33731292}\\1.0\\Debug"
 #define DEBUG_TRACELEVEL L"tracelevel"
 #define DEBUG_TRACEDIR L"tracedir"

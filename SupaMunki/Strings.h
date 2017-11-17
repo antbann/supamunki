@@ -7,9 +7,13 @@
 #include <functional> 
 #include <cctype>
 #include <locale>
+#include <boost/filesystem.hpp>
 
 
 #define MAX_RAW_STRING 256
+
+
+namespace fs = boost::filesystem;
 
 
 class Strings
@@ -20,6 +24,21 @@ public:
 	static std::vector<std::wstring> Strings::Split(const std::wstring& text, const std::wstring& delims);
 	static std::wstring Strings::VariantArrayToString(const VARIANT *pSafeArray);
 	static std::vector<std::wstring> Strings::VariantToStrVector(const VARIANT *pVar);
+	
+	static inline std::wstring Strings::JoinPaths(const std::wstring& path1, const std::wstring& path2) {
+		fs::path fsPath1(path1);
+		fs::path fsPath2(path2);
+		fs::path result = fsPath1 / fsPath2;
+
+		return result.wstring();
+	}
+
+	static inline std::wstring Strings::ExtensionFromPath(const std::wstring& path) {
+		std::wstring extension = fs::path(path).extension().wstring();
+		std::transform(extension.begin(), extension.end(), extension.begin(), ::tolower);
+
+		return extension;
+	}
 
 	static inline std::wstring& Strings::ltrim(std::wstring &s) {
 		s.erase(s.begin(), std::find_if(s.begin(), s.end(),

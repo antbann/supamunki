@@ -8,15 +8,21 @@
 #include <OleAuto.h>
 #include <chrono>
 #include <thread>
-#include <boost/filesystem/path.hpp>
+
+//https://connect.microsoft.com/VisualStudio/feedback/details/976983
+#pragma warning(push)
+#pragma warning(disable : 4091)
+#include <shlobj.h>
+#pragma warning(pop)
+
 #include "..\SupaMunki\SupaMunki_i.h"
 #include "..\SupaMunki\SupaMunki_i.c"
 #include "..\SupaMunki\WinReg.h"
 #include "..\SupaMunki\Strings.h"
 
 
-namespace filesystem = boost::filesystem;
 using namespace winreg;
+
 
 namespace Tests {
 
@@ -96,14 +102,16 @@ namespace Tests {
 		void InvokeScript(std::wstring strScript)
 		{
 			std::wstring strInterpreter;
-			std::wstring extension = filesystem::path(strScript).extension().wstring();
-			std::transform(extension.begin(), extension.end(), extension.begin(), ::tolower);
+			auto extension = Strings::ExtensionFromPath(strScript);
+
+			TCHAR buffer[MAX_PATH];
+			SHGetSpecialFolderPath((HWND)NULL, (LPWSTR)buffer, CSIDL_SYSTEMX86, false);
 
 			const UINT MAX_SCRIPT_TIME_MS = 300000;
 			const std::wstring regAppsPart = L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\";
 
 			if (extension == L".js" || extension == L".vbs") {
-				strInterpreter = L"C:\\windows\\syswow64\\cscript.exe";
+				strInterpreter = Strings::JoinPaths(buffer, L"cscript.exe");
 			}
 			else if(extension == L".py") {
 				RegKey key{ HKEY_LOCAL_MACHINE, regAppsPart + L"python.exe" };

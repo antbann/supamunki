@@ -1,11 +1,11 @@
-#include "Strings.h"
-#include "Exceptions.h"
 #include <algorithm>
 #include <sstream>
 #include "logger.h"
 #include <memory>
 #include <atlconv.h>
 #include <oleauto.h>
+#include "Exceptions.h"
+#include "Strings.h"
 
 
 char* Strings::WstringToPChar(std::wstring strString, OUT char* result)
