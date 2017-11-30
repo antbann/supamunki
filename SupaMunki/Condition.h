@@ -23,6 +23,5 @@ private:
 	std::vector<IUIAutomationCondition*> *m_pvConditions;
 
 	STDMETHOD(GetCondition)(std::wstring sName, std::wstring sValue, IUIAutomationCondition** ppCondition);
-	STDMETHOD(UiaControlTypeFromStr)(std::wstring strValue, PINT pnResult);
 	STDMETHOD(ClearPreviousConditions)();
 };

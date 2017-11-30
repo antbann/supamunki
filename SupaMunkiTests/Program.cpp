@@ -117,3 +117,5 @@ TEST_CASE("InvokeFromScripts", "[smoke]") {
 	test.InvokeScript(L"test.vbs");
 	REQUIRE(!test.IsNotepadWindowOnScreen());
 }
+
+// TODO: SetIntValue, SetStringValue, SetFocus, Expand, ContextMenu

@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 17 18:08:43 2017
+/* at Thu Nov 30 16:43:23 2017
  */
 /* Compiler settings for SupaMunki.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -50,7 +50,7 @@
 #include "SupaMunki_i.h"
 
 #define TYPE_FORMAT_STRING_SIZE   1071                              
-#define PROC_FORMAT_STRING_SIZE   361                               
+#define PROC_FORMAT_STRING_SIZE   403                               
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   2            
@@ -287,7 +287,7 @@ static const SupaMunki_MIDL_PROC_FORMAT_STRING SupaMunki__MIDL_ProcFormatString 
 /* 200 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
 /* 202 */	NdrFcShort( 0x400 ),	/* Type Offset=1024 */
 
-	/* Parameter nTimeoutMs */
+	/* Parameter ulTimeoutMs */
 
 /* 204 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
 /* 206 */	NdrFcShort( 0x18 ),	/* x86 Stack size/offset = 24 */
@@ -363,64 +363,100 @@ static const SupaMunki_MIDL_PROC_FORMAT_STRING SupaMunki__MIDL_ProcFormatString 
 /* 286 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Procedure get_Parent */
+	/* Procedure ContextMenu */
 
 /* 288 */	0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
 /* 290 */	NdrFcLong( 0x0 ),	/* 0 */
 /* 294 */	NdrFcShort( 0xe ),	/* 14 */
-/* 296 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 296 */	NdrFcShort( 0x1c ),	/* x86 Stack size/offset = 28 */
 /* 298 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 300 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 302 */	0x45,		/* Oi2 Flags:  srv must size, has return, has ext, */
-			0x2,		/* 2 */
+/* 302 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
+			0x3,		/* 3 */
 /* 304 */	0x8,		/* 8 */
-			0x1,		/* Ext Flags:  new corr desc, */
+			0x5,		/* Ext Flags:  new corr desc, srv corr check, */
 /* 306 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 308 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 308 */	NdrFcShort( 0x1 ),	/* 1 */
 /* 310 */	NdrFcShort( 0x0 ),	/* 0 */
 
-	/* Parameter pVal */
+	/* Parameter szMenuItem */
 
-/* 312 */	NdrFcShort( 0x13 ),	/* Flags:  must size, must free, out, */
+/* 312 */	NdrFcShort( 0x8b ),	/* Flags:  must size, must free, in, by val, */
 /* 314 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 316 */	NdrFcShort( 0x40a ),	/* Type Offset=1034 */
+/* 316 */	NdrFcShort( 0x424 ),	/* Type Offset=1060 */
+
+	/* Parameter vSubmenuItems */
+
+/* 318 */	NdrFcShort( 0x8b ),	/* Flags:  must size, must free, in, by val, */
+/* 320 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 322 */	NdrFcShort( 0x400 ),	/* Type Offset=1024 */
 
 	/* Return value */
 
-/* 318 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 320 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 322 */	0x8,		/* FC_LONG */
+/* 324 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 326 */	NdrFcShort( 0x18 ),	/* x86 Stack size/offset = 24 */
+/* 328 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Procedure get_Parent */
+
+/* 330 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 332 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 336 */	NdrFcShort( 0xf ),	/* 15 */
+/* 338 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 340 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 342 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 344 */	0x45,		/* Oi2 Flags:  srv must size, has return, has ext, */
+			0x2,		/* 2 */
+/* 346 */	0x8,		/* 8 */
+			0x1,		/* Ext Flags:  new corr desc, */
+/* 348 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 350 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 352 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter pVal */
+
+/* 354 */	NdrFcShort( 0x13 ),	/* Flags:  must size, must free, out, */
+/* 356 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 358 */	NdrFcShort( 0x40a ),	/* Type Offset=1034 */
+
+	/* Return value */
+
+/* 360 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 362 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 364 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 	/* Procedure put_Parent */
 
-/* 324 */	0x33,		/* FC_AUTO_HANDLE */
+/* 366 */	0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
-/* 326 */	NdrFcLong( 0x0 ),	/* 0 */
-/* 330 */	NdrFcShort( 0xf ),	/* 15 */
-/* 332 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 334 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 336 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 338 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
+/* 368 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 372 */	NdrFcShort( 0x10 ),	/* 16 */
+/* 374 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 376 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 378 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 380 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
 			0x2,		/* 2 */
-/* 340 */	0x8,		/* 8 */
+/* 382 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
-/* 342 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 344 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 346 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 384 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 386 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 388 */	NdrFcShort( 0x0 ),	/* 0 */
 
 	/* Parameter newVal */
 
-/* 348 */	NdrFcShort( 0xb ),	/* Flags:  must size, must free, in, */
-/* 350 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 352 */	NdrFcShort( 0x40e ),	/* Type Offset=1038 */
+/* 390 */	NdrFcShort( 0xb ),	/* Flags:  must size, must free, in, */
+/* 392 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 394 */	NdrFcShort( 0x40e ),	/* Type Offset=1038 */
 
 	/* Return value */
 
-/* 354 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 356 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 358 */	0x8,		/* FC_LONG */
+/* 396 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 398 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 400 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 			0x0
@@ -1206,7 +1242,8 @@ static const unsigned short ISupaMunkiElement_FormatStringOffsetTable[] =
     222,
     258,
     288,
-    324
+    330,
+    366
     };
 
 static const MIDL_STUBLESS_PROXY_INFO ISupaMunkiElement_ProxyInfo =
@@ -1230,7 +1267,7 @@ static const MIDL_SERVER_INFO ISupaMunkiElement_ServerInfo =
     0,
     0,
     0};
-CINTERFACE_PROXY_VTABLE(16) _ISupaMunkiElementProxyVtbl = 
+CINTERFACE_PROXY_VTABLE(17) _ISupaMunkiElementProxyVtbl = 
 {
     &ISupaMunkiElement_ProxyInfo,
     &IID_ISupaMunkiElement,
@@ -1248,6 +1285,7 @@ CINTERFACE_PROXY_VTABLE(16) _ISupaMunkiElementProxyVtbl =
     (void *) (INT_PTR) -1 /* ISupaMunkiElement::WaitProperty */ ,
     (void *) (INT_PTR) -1 /* ISupaMunkiElement::Expand */ ,
     (void *) (INT_PTR) -1 /* ISupaMunkiElement::Click */ ,
+    (void *) (INT_PTR) -1 /* ISupaMunkiElement::ContextMenu */ ,
     (void *) (INT_PTR) -1 /* ISupaMunkiElement::get_Parent */ ,
     (void *) (INT_PTR) -1 /* ISupaMunkiElement::put_Parent */
 };
@@ -1267,6 +1305,7 @@ static const PRPC_STUB_FUNCTION ISupaMunkiElement_table[] =
     NdrStubCall2,
     NdrStubCall2,
     NdrStubCall2,
+    NdrStubCall2,
     NdrStubCall2
 };
 
@@ -1274,7 +1313,7 @@ CInterfaceStubVtbl _ISupaMunkiElementStubVtbl =
 {
     &IID_ISupaMunkiElement,
     &ISupaMunkiElement_ServerInfo,
-    16,
+    17,
     &ISupaMunkiElement_table[-3],
     CStdStubBuffer_DELEGATING_METHODS
 };

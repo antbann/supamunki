@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 17 18:08:43 2017
+/* at Thu Nov 30 16:43:23 2017
  */
 /* Compiler settings for SupaMunki.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -113,13 +113,17 @@ EXTERN_C const IID IID_ISupaMunkiElement;
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE WaitProperty( 
             /* [in] */ BSTR szPropertyName,
             /* [in] */ VARIANT oValue,
-            /* [in] */ int nTimeoutMs,
+            /* [in] */ ULONG ulTimeoutMs,
             /* [retval][out] */ VARIANT_BOOL *bResult) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Expand( 
             /* [in] */ VARIANT_BOOL bExpand) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Click( void) = 0;
+        
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ContextMenu( 
+            /* [in] */ BSTR szMenuItem,
+            /* [optional][in] */ VARIANT vSubmenuItems) = 0;
         
         virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_Parent( 
             /* [retval][out] */ ISupaMunkiElement **pVal) = 0;
@@ -200,7 +204,7 @@ EXTERN_C const IID IID_ISupaMunkiElement;
             ISupaMunkiElement * This,
             /* [in] */ BSTR szPropertyName,
             /* [in] */ VARIANT oValue,
-            /* [in] */ int nTimeoutMs,
+            /* [in] */ ULONG ulTimeoutMs,
             /* [retval][out] */ VARIANT_BOOL *bResult);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Expand )( 
@@ -209,6 +213,11 @@ EXTERN_C const IID IID_ISupaMunkiElement;
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Click )( 
             ISupaMunkiElement * This);
+        
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *ContextMenu )( 
+            ISupaMunkiElement * This,
+            /* [in] */ BSTR szMenuItem,
+            /* [optional][in] */ VARIANT vSubmenuItems);
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Parent )( 
             ISupaMunkiElement * This,
@@ -266,14 +275,17 @@ EXTERN_C const IID IID_ISupaMunkiElement;
 #define ISupaMunkiElement_SetFocus(This,bResult)	\
     ( (This)->lpVtbl -> SetFocus(This,bResult) ) 
 
-#define ISupaMunkiElement_WaitProperty(This,szPropertyName,oValue,nTimeoutMs,bResult)	\
-    ( (This)->lpVtbl -> WaitProperty(This,szPropertyName,oValue,nTimeoutMs,bResult) ) 
+#define ISupaMunkiElement_WaitProperty(This,szPropertyName,oValue,ulTimeoutMs,bResult)	\
+    ( (This)->lpVtbl -> WaitProperty(This,szPropertyName,oValue,ulTimeoutMs,bResult) ) 
 
 #define ISupaMunkiElement_Expand(This,bExpand)	\
     ( (This)->lpVtbl -> Expand(This,bExpand) ) 
 
 #define ISupaMunkiElement_Click(This)	\
     ( (This)->lpVtbl -> Click(This) ) 
+
+#define ISupaMunkiElement_ContextMenu(This,szMenuItem,vSubmenuItems)	\
+    ( (This)->lpVtbl -> ContextMenu(This,szMenuItem,vSubmenuItems) ) 
 
 #define ISupaMunkiElement_get_Parent(This,pVal)	\
     ( (This)->lpVtbl -> get_Parent(This,pVal) ) 

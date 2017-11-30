@@ -34,9 +34,9 @@ namespace SharpClient
             return ComObject.SetFocus();
         }
 
-        public bool WaitProperty(string szPropertyName, object oValue, int nTimeoutMs)
+        public bool WaitProperty(string szPropertyName, object oValue, uint ulTimeoutMs)
         {
-            return ComObject.WaitProperty(szPropertyName, oValue, nTimeoutMs);
+            return ComObject.WaitProperty(szPropertyName, oValue, ulTimeoutMs);
         }
 
         public void Expand(bool bExpand)
@@ -47,6 +47,11 @@ namespace SharpClient
         public void Click()
         {
             ComObject.Click();
+        }
+
+        public void ContextMenu(string szMenuItem, object vSubmenuItems = null)
+        {
+            ComObject.ContextMenu(szMenuItem, vSubmenuItems);
         }
     }
 }

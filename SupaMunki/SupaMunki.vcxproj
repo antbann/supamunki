@@ -233,6 +233,7 @@
     </ClCompile>
     <ClCompile Include="Exceptions.cpp" />
     <ClCompile Include="logger.cpp" />
+    <ClCompile Include="PropertyNameValuePair.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -262,6 +263,7 @@
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="Exceptions.h" />
     <ClInclude Include="logger.h" />
+    <ClInclude Include="PropertyNameValuePair.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Strings.h" />
