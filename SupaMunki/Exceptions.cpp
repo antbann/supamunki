@@ -1,6 +1,6 @@
+#include "stdafx.h"
 #include "Exceptions.h"
 #include "Strings.h"
-#include "resource.h"
 
 
 PropertyNotSupportedException::PropertyNotSupportedException(std::wstring argument)

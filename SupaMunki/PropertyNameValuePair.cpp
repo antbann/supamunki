@@ -1,5 +1,7 @@
+#include "stdafx.h"
 #include "PropertyNameValuePair.h"
 #include "logger.h"
+
 
 
 CPropertyNameValuePair::CPropertyNameValuePair(const std::wstring& strName, const std::wstring& strValue)

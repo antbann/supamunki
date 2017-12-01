@@ -3,10 +3,7 @@
 
 //#define BOOST_LOG_DYN_LINK // necessary when linking the boost_log library dynamically
 
-#include <boost/log/trivial.hpp>
-#include <boost/log/sources/global_logger_storage.hpp>
-#include <string>
-#include <windows.h>
+#include "stdafx.h"
 
 // the logs are also written to LOGFILE
 #define LOGFILE L"SupaMunki.log"

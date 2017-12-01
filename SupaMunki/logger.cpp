@@ -1,15 +1,4 @@
-#include <boost/log/expressions/formatters/date_time.hpp>
-#include <boost/log/expressions.hpp>
-#include <boost/log/sinks/sync_frontend.hpp>
-#include <boost/log/sinks/text_ostream_backend.hpp>
-#include <boost/log/support/date_time.hpp>
-#include <boost/core/null_deleter.hpp>
-#include <boost/log/utility/setup/common_attributes.hpp>
-#include <boost/make_shared.hpp>
-#include <boost/log/utility/setup/file.hpp>
-#include <boost/log/utility/setup/console.hpp>
-#include <boost/log/sinks.hpp>
-#include <fstream>
+#include "stdafx.h"
 #include "logger.h"
 #include "WinReg.h"
 #include "Strings.h"

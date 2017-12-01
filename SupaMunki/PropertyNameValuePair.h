@@ -1,6 +1,4 @@
 #pragma once
-#include <UIAutomation.h>
-#include <atlbase.h>
 #include "Strings.h"
 
 

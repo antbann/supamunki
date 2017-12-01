@@ -1,9 +1,5 @@
-#include <algorithm>
-#include <sstream>
+#include "stdafx.h"
 #include "logger.h"
-#include <memory>
-#include <atlconv.h>
-#include <oleauto.h>
 #include "Exceptions.h"
 #include "Strings.h"
 
@@ -51,7 +47,7 @@ std::vector<std::wstring> Strings::Split(const std::wstring& text, const std::ws
 }
 
 
-std::wstring Strings::VariantArrayToString(const VARIANT *pVar)
+std::wstring Strings::VariantArrayToString(const LPVARIANT pVar)
 {
 	if (pVar == nullptr || pVar->parray == nullptr) {
 		return L"";
@@ -69,7 +65,7 @@ std::wstring Strings::VariantArrayToString(const VARIANT *pVar)
 }
 
 
-std::vector<std::wstring> Strings::VariantToStrVector(const VARIANT *pVar)
+std::vector<std::wstring> Strings::VariantToStrVector(const LPVARIANT pVar)
 {
 	std::vector<std::wstring> result;
 
@@ -143,7 +139,7 @@ std::vector<std::wstring> Strings::VariantToStrVector(const VARIANT *pVar)
 				HRESULT hr = SafeArrayAccessData(saValues, (void HUGEP**)&pRawVals);
 				if (SUCCEEDED(hr))
 				{
-					VARIANT* pVals = reinterpret_cast<VARIANT*>(pRawVals);
+					LPVARIANT pVals = reinterpret_cast<LPVARIANT>(pRawVals);
 
 					long lowerBound, upperBound;
 					SafeArrayGetLBound(saValues, 1, &lowerBound);

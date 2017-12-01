@@ -1,9 +1,6 @@
 #pragma once
-#include <atlbase.h>
+#include "stdafx.h"
 #include "SupaMunki_i.h"
-#include <UIAutomation.h>
-#include <string>
-#include <vector>
 
 
 using namespace ATL;

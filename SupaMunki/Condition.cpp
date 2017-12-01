@@ -1,6 +1,6 @@
+#include "stdafx.h"
 #include "logger.h"
 #include "Strings.h"
-#include "resource.h"
 #include "PropertyNameValuePair.h"
 #include "Condition.h"
 

@@ -53,5 +53,10 @@ namespace SharpClient
         {
             ComObject.ContextMenu(szMenuItem, vSubmenuItems);
         }
+
+        public string GetStringValue()
+        {
+            return ComObject.GetStringValue();
+        }
     }
 }

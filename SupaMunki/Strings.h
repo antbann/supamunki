@@ -1,13 +1,6 @@
 #pragma once
 
-#include <string>
-#include <vector>
-#include <objbase.h>
-#include <algorithm> 
-#include <functional> 
-#include <cctype>
-#include <locale>
-#include <boost/filesystem.hpp>
+#include "stdafx.h"
 
 
 #define MAX_RAW_STRING 256
@@ -22,8 +15,8 @@ public:
 	static char* WstringToPChar(std::wstring strString, OUT char* result);
 	static HRESULT Strings::WstringToBstr(std::wstring strString, OUT BSTR* pbstrResult);
 	static std::vector<std::wstring> Strings::Split(const std::wstring& text, const std::wstring& delims);
-	static std::wstring Strings::VariantArrayToString(const VARIANT *pSafeArray);
-	static std::vector<std::wstring> Strings::VariantToStrVector(const VARIANT *pVar);
+	static std::wstring Strings::VariantArrayToString(const LPVARIANT pSafeArray);
+	static std::vector<std::wstring> Strings::VariantToStrVector(const LPVARIANT pVar);
 	
 	static inline std::wstring Strings::JoinPaths(const std::wstring& path1, const std::wstring& path2) {
 		fs::path fsPath1(path1);
